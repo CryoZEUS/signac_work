@@ -9,7 +9,7 @@ def volume_computed(job):
 	return job.isfile("volume.txt")
 
 @FlowProject.operation
-@FlowProject.post(volume_computed)
+@FlowProject.pre(volume_computed)
 @FlowProject.post.isfile("data.json")
 def store_volume_in_json_file(job):
 	with open(job.fn("volume.txt")) as textfile:
