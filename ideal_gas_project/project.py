@@ -1,5 +1,5 @@
 #project.py
-#import signac
+import signac
 from flow import FlowProject
 import os
 import json
